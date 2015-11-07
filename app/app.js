@@ -2,10 +2,23 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.main',
-  'myApp.version'
+    'ngRoute',
+    'myApp.main',
+    'myApp.version'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/main'});
+factory('searchService', function () {
+
+    var search = function () {
+
+        console.log("search 2");
+
+        return ;
+    };
+
+    return {
+        search: search
+    };
+}).
+config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.otherwise({redirectTo: '/main'});
 }]);

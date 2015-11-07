@@ -1,6 +1,12 @@
 angular.module("myApp").controller("FeedController", [
-    '$scope', '$location',
-    function ($scope, $location ) {
+    '$scope', '$location','searchService',
+    function ($scope, $location, searchService) {
+
+        $scope.$on('searchEvent', function(event, args) {
+
+            console.log("search");
+
+        });
 
         $scope.republicas = [
             {
