@@ -20,7 +20,7 @@
         <div class="row row-offcanvas row-offcanvas-center">
 
             <!-- main right col -->
-            <div class="column col-sm-10 col-xs-11" id="main">
+            <div class="column col-sm-12 col-xs-12" id="main">
 
                 <!-- top nav -->
                 <div class="navbar navbar-blue navbar-static-top">
@@ -88,7 +88,7 @@
 
                             <div class="col-sm-6" ng-controller="FeedController">
 
-                                <div class="well">
+                                <div class="well" ng-if="logged">
                                     <form class="form-horizontal" role="form">
 
                                         <div class="form-group" style="padding:14px;">
@@ -116,7 +116,7 @@
 
                                         <div class="clearfix"></div>
                                         <form>
-                                            <div class="input-group">
+                                            <div class="input-group" ng-if="logged">
                                                 <div class="input-group-btn">
                                                     <button class="btn btn-default" ng-click="like()">+1</button>
                                                 </div>
@@ -136,6 +136,10 @@
                             <!-- main col right -->
                             <div class="col-sm-6" ng-controller="RepublicaController">
 
+                                <div class="well">
+                                    <leaflet lf-center="center" height="300px" width="100%"></leaflet>
+                                </div>
+
                                 <div ng-repeat="republica in loadRepublicas()" class="panel panel-default">
 
                                     <div class="panel-heading"><h4>{{
@@ -147,7 +151,7 @@
 
                                         <div class="clearfix"></div>
                                         <form>
-                                            <div class="input-group">
+                                            <div class="input-group" ng-if="logged">
                                                 <div class="input-group-btn">
                                                     <button class="btn btn-default" ng-click="like()">+1</button>
                                                 </div>
@@ -162,8 +166,6 @@
                                 </div>
 
                             </div>
-
-
                         </div>
                         <!--/row-->
 

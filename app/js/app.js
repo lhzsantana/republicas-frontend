@@ -4,7 +4,8 @@
 angular.module('myApp', [
     'ngRoute',
     'myApp.main',
-    'myApp.version'
+    'myApp.version',
+    'leaflet-directive'
 ]).
 factory('searchService', function () {
 

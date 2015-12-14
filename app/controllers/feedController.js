@@ -2,6 +2,8 @@ angular.module("myApp").controller("FeedController", [
     '$scope', '$location','searchService',
     function ($scope, $location, searchService) {
 
+        $scope.logged=false;
+
         $scope.$on('searchEvent', function(event, args) {
 
             console.log("search");
