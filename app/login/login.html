@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/login.css" rel="stylesheet">
+</head>
+<body>
+    <img src="../imgs/bg.jpg" id="bg" alt="">
+    <div id="cent">
+        <div id="content-wrapper">
+            <div id="logo">
+                Repúblicas
+            </div>
+
+            <div class="form-group" style="padding:14px;">
+                <input type="text" ng-model="user.email" class="form-control" placeholder="Email"/>
+                <br />
+                <input type="password" ng-model="user.password" class="form-control" placeholder="Senha"/>
+                <br />
+                <button class="btn btn-primary pull-right" type="button" ng-click="login()">
+                    Entrar
+                </button>
+            </div>
+            <span>Não é cadastrado? Entre com seu usuário do Facebook</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -21,5 +21,20 @@ factory('searchService', function () {
     };
 }).
 config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/main'});
+    $routeProvider
+        .when('/newRepublica', {
+            templateUrl: 'republica/newRepublica.html',
+            controller: 'RepublicaController'
+        })
+        .when('/login', {
+            templateUrl: 'login/login.html',
+            controller: 'LoginController'
+        })
+        .when('/main', {
+            templateUrl: 'main/main.html',
+            controller: 'MainController'
+        }).
+        otherwise({
+            redirectTo: '/main'
+        });
 }]);

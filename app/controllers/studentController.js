@@ -30,5 +30,16 @@ angular.module("myApp").controller("StudentController", [
 
             return $scope.students;
         };
+
+        $scope.logout = function () {
+            $location.path("login");
+        };
+
+        $scope.newRepublica = function(){
+
+            console.log("New republica");
+
+            $location.path("newRepublica");
+        }
     }
 ]);
