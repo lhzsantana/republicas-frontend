@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('myApp.main', ['ngRoute'])
-.controller("MainController", [
+angular.module('myApp.login', ['ngRoute'])
+
+.controller("LoginController", [
 	'$scope','$location',
     function($scope, $location){
 

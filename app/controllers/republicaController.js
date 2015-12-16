@@ -2,6 +2,24 @@ angular.module("myApp").controller("RepublicaController", [
     '$scope', '$location',
     function ($scope, $location) {
 
+        $scope.center = {
+            lat: -27.595377,
+            lng: -48.548049899,
+            zoom: 4
+        };
+
+        window.navigator.geolocation.getCurrentPosition(function(position) {
+            $scope.$apply(function() {
+                $scope.center.lat = position.coords.latitude;
+                $scope.center.lng = position.coords.longitude;
+                $scope.center.zoom = 12;
+
+                console.log(position);
+            });
+        }, function(error) {
+            alert(error);
+        });
+
         $scope.republicas = [
             {
                 id: 1,
@@ -26,5 +44,6 @@ angular.module("myApp").controller("RepublicaController", [
 
             return $scope.republicas;
         };
+
     }
 ]);

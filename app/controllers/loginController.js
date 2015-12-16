@@ -4,7 +4,7 @@ angular.module("myApp").controller("LoginController", [
     function($scope, $location){
 
         $scope.login = function(){
-           console.log("Usuário logado");
+            $location.path("main");
         }
     }
 ]);
