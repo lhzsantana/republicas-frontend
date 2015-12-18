@@ -22,9 +22,6 @@ factory('searchService', function () {
 }).
 config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/nav', {
-            templateUrl: 'nav.html'
-        })
         .when('/newRepublica', {
             templateUrl: 'republica/newRepublica.html',
             controller: 'RepublicaController'
