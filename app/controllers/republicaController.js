@@ -7,6 +7,7 @@ angular.module("myApp").controller("RepublicaController", [
             lng: -48.548049899,
             zoom: 4
         };
+				
 
         window.navigator.geolocation.getCurrentPosition(function(position) {
             $scope.$apply(function() {
@@ -19,6 +20,24 @@ angular.module("myApp").controller("RepublicaController", [
         }, function(error) {
             alert(error);
         });
+		
+	map = new L.Map('map');
+
+	// create the tile layer with correct attribution
+	var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+	var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 20, attribution: osmAttrib});		
+
+	// start the map in South-East England
+	map.setView(new L.LatLng(-27.595377, -48.548049899), 3);
+	map.addLayer(osm);
+				
+		var marker = L.marker([-27.595377, -48.548049899]).addTo(map);
+		
+		var marker2 = L.marker([-23.579681, -46.751683]).addTo(map);
+
+		
+
 
         /*
         $scope.republicas = [

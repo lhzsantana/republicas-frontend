@@ -1,0 +1,97 @@
+
+<div style="width: 100%" ng-include="'views/nav.html'"></div>
+
+<div class="padding">
+    <div class="full col-sm-9">
+
+        <!-- content -->
+        <div class="row">
+
+            <!-- main col left -->
+
+            <div class="col-sm-6" ng-controller="VehicleController">
+
+                <div class="well" ng-if="logged">
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group" style="padding:14px;">
+                                                <textarea ng-model="user.idea" class="form-control"
+                                                          placeholder="Compartilhe uma ideia"></textarea>
+                        </div>
+                        <button class="btn btn-primary pull-right" type="button" ng-click="share()">
+                            Compartilhar
+                        </button>
+                        <ul class="list-inline">
+                            <li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
+                            <li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
+                        </ul>
+                    </form>
+                </div>
+
+                <div ng-repeat="x in names" class="panel panel-default">
+
+                    <div class="panel-heading"><h4>{{ x.plate }}</h4></div>
+
+                    <div class="panel-body">
+                        <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">{{
+                        x.prefix}}</a>
+
+                        <div class="clearfix"></div>
+                        <form>
+                            <div class="input-group" ng-if="logged">
+
+                                <input type="text" class="form-control" placeholder="Add a comment..">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"><a href="#">Ver mais...</a></div>
+                </div>
+
+            </div>
+
+			            <div class="col-sm-6" ng-controller="RepublicaController">
+
+                <div class="panel-heading" ng-if="message"><h1>{{ message }}</h1></div>
+
+                <div id="map" class="well">
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"><a href="#">Ver mais...</a></div>
+                </div>
+
+            </div>
+          
+        </div>
+        <!--/row-->
+
+        <div class="row">
+            <div class="col-sm-6">*
+                <a href="#">Twitter</a>
+                <small class="text-muted">|</small>
+                <a href="#">Facebook</a>
+                <small class="text-muted">|</small>
+                <a href="#">Google+</a>
+            </div>
+        </div>
+
+        <div class="row" id="footer">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    <a href="#" class="pull-right">Repúblicas 2015</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- /col-9 -->
+</div>
+<!-- /padding -->
