@@ -1,26 +1,28 @@
-angular.module("myApp").controller("StudentController", [
+angular.module("myApp").controller("UserController", [
     '$scope', '$location',
     function ($scope, $location) {
 
-        $scope.currentStudent = {
+        $scope.currentUser = {
             name:'Luiz',
             university:'UNESP',
+            role:'Administrador',
             degree:'Ciência da Computação',
             city:'São José do Rio Preto'
         }
 
-        $scope.students = [
+        $scope.users = [
 
         ];
 
         $scope.newStudent = function () {
 
-            $scope.students.unshift(
+            $scope.users.unshift(
                 {
-                    name: $scope.student.name,
-                    university: $scope.student.university,
-                    degree: $scope.student.degree,
-                    city: $scope.student.city
+                    name: $scope.currentUser.name,
+                    role: $scope.currentUser.role,
+                    university: $scope.currentUser.university,
+                    degree: $scope.currentUser.degree,
+                    city: $scope.currentUser.city
                 }
             );
 
@@ -28,7 +30,7 @@ angular.module("myApp").controller("StudentController", [
 
         $scope.loadStudents = function () {
 
-            return $scope.students;
+            return $scope.users;
         };
 
         $scope.logout = function () {
