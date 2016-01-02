@@ -1,6 +1,6 @@
 angular.module("myApp").controller("RepublicaController", [
-    '$scope', '$location',
-    function ($scope, $location) {
+    '$scope', '$http', '$location',
+    function ($scope, $http, $location) {
 
         $scope.center = {
             lat: -27.595377,
@@ -32,9 +32,32 @@ angular.module("myApp").controller("RepublicaController", [
 	map.setView(new L.LatLng(-27.595377, -48.548049899), 3);
 	map.addLayer(osm);
 				
-		var marker = L.marker([-27.595377, -48.548049899]).addTo(map);
+				
+				
+			$http.get("http://localhost:8080/vehicle/list")
+			.then(function(response) {
+				$scope.names = response.data; 
+				for (var i = 0; i < $scope.names.length; i++) {
+					
+					var pos = $scope.names[i];
+					
+					var marker = L.marker([pos.lastLat, pos.lastLong]).addTo(map).bindPopup(pos.plate);
+					
+					var route = pos.line.positions;
+					var positions = [];
+					
+					for (var j = 0; j < route.length; j++) {
+						var p = route[j];
+						positions[j] = [p.latitude,p.longitude];
+					}
+					
+					L.polyline(positions, {color: 'red'}).addTo(map);
+					
+				
+				}
+			});
+			
 		
-		var marker2 = L.marker([-23.579681, -46.751683]).addTo(map);
 
 		
 
