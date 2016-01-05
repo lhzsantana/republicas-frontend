@@ -1,6 +1,6 @@
 angular.module("myApp").controller("RepublicaController", [
-    '$scope', '$location',
-    function ($scope, $location) {
+    '$scope', '$http', '$location',
+    function ($scope, $http, $location) {
 
         $scope.center = {
             lat: -27.595377,
@@ -13,7 +13,7 @@ angular.module("myApp").controller("RepublicaController", [
             $scope.$apply(function() {
                 $scope.center.lat = position.coords.latitude;
                 $scope.center.lng = position.coords.longitude;
-                $scope.center.zoom = 12;
+                $scope.center.zoom = 8;
 
                 console.log(position);
             });
@@ -29,12 +29,37 @@ angular.module("myApp").controller("RepublicaController", [
 	var osm = new L.TileLayer(osmUrl, {minZoom: 3, maxZoom: 20, attribution: osmAttrib});		
 
 	// start the map in South-East England
-	map.setView(new L.LatLng(-27.595377, -48.548049899), 3);
+	map.setView(new L.LatLng(-23.575222, -46.641749), 10);
 	map.addLayer(osm);
+	
+	var colors = ['red', 'blue', 'green'];
 				
-		var marker = L.marker([-27.595377, -48.548049899]).addTo(map);
+				
+				
+			$http.get("http://localhost:8080/vehicle/list")
+			.then(function(response) {
+				$scope.names = response.data; 
+				for (var i = 0; i < $scope.names.length; i++) {
+					
+					var pos = $scope.names[i];
+					
+					var marker = L.marker([pos.lastLat, pos.lastLong]).addTo(map).bindPopup(pos.plate);
+					
+					var route = pos.line.positions;
+					var positions = [];
+					
+					for (var j = 0; j < route.length; j++) {
+						var p = route[j];
+						positions[j] = [p.latitude,p.longitude];
+					}
+					
+					L.polyline(positions, {color: colors[i]}).addTo(map);
+					
+				
+				}
+			});
+			
 		
-		var marker2 = L.marker([-23.579681, -46.751683]).addTo(map);
 
 		
 

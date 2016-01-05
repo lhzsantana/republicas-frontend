@@ -31,11 +31,13 @@
 
                 <div ng-repeat="x in names" class="panel panel-default">
 
-                    <div class="panel-heading"><h4>{{ x.plate }}</h4></div>
+                    <div class="panel-heading"><h4>Placa: {{ x.plate }} Prefixo: {{
+                        x.prefix}}</h4></div>
 
                     <div class="panel-body">
-                        <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">{{
-                        x.prefix}}</a>
+                        Empresa: {{x.company}} <br>
+						Garagem: {{x.garage}}<br>
+						Linha: {{x.line.lineName}}
 
                         <div class="clearfix"></div>
                         <form>
