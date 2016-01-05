@@ -9,6 +9,8 @@ angular.module("myApp").controller("FeedController", [
             console.log("search");
 
         });
+		
+
 
         $scope.republicas = [
             {

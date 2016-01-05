@@ -34,6 +34,10 @@ config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'main/main.html',
             controller: 'MainController'
         }).
+		when('/priview', {
+            templateUrl: 'priview/priview.html',
+            controller: 'VehicleController'
+        }).
         otherwise({
             redirectTo: '/main'
         });

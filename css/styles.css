@@ -73,7 +73,7 @@ hr {
 
 .navbar-blue {
     border-width:0;
-	background-color:#438D80;
+	background-color:#8B0000;
     color:#ffffff;
     font-family:arial,sans-serif;
     top:0;
@@ -89,7 +89,7 @@ hr {
 .navbar-blue .dropdown-menu li > a {padding-left:30px;}
 
 .navbar-blue li>a:hover, .navbar-blue li>a:focus, .navbar-blue .open, .navbar-blue .open>a, .navbar-blue .open>a:hover, .navbar-blue .open>a:focus {
-   background-color:#2A4888;
+   background-color:#B22222;
    color:#fff;
 }
 
@@ -123,7 +123,7 @@ hr {
   display:block;
   padding:3px;
   background-color:#fff;
-  color:#4E8975;
+  color:#B22222;
   height:28px;
   width:28px;
   margin:9px;
@@ -161,79 +161,80 @@ h1,h2,h3 {
 }
 
 .btn-primary,.label-primary,.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus  {
-	background-color:#4E8975;
+	background-color:#8B0000;
     color:#fffffe;
+    border-color:#FF0000;
 }
 .btn-default {
-    color:#666666;
-    text-shadow:0 0 1px rgba(0,0,0,.3);
+color:#666666;
+text-shadow:0 0 1px rgba(0,0,0,.3);
 }
 .form-control {
-	
+
 }
 
 .panel textarea, .well textarea, textarea.form-control
 {
-   resize: none;
+resize: none;
 }
-  
+
 .badge{
-   color:#4E8975;
-   background-color:#fff;
+color:##B22222;
+background-color:#fff;
 }
 .badge:hover, .badge-inverse{
-   background-color:#4E8975;
-   color:#fff;
+background-color:#B22222;
+color:#fff;
 }
-    
+
 .jumbotron {
-  background-color:transparent;
+background-color:transparent;
 }
 .label-default {
-  background-color:#dddddd;
+background-color:#dddddd;
 }
 .page-header {
-  margin-top: 55px;
-  padding-top: 9px;
-  border-top:1px solid #eeeeee;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:2px;
+margin-top: 55px;
+padding-top: 9px;
+border-top:1px solid #eeeeee;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:2px;
 }
 
 .panel-default .panel-heading {
-  background-color:#f9fafb;
-  color:#555555;
+background-color:#f9fafb;
+color:#555555;
 }
 
 .col-sm-9.full {
-    width: 100%;
+width: 100%;
 }
 
 .modal-header, .modal-footer {
-	background-color:#f2f2f2;
-    font-weight:800;
-    font-size:12px;
+background-color:#f2f2f2;
+font-weight:800;
+font-size:12px;
 }
 
 .modal-footer i, .well i {
-    font-size:20px;
-    color:#c0c0c0;
+font-size:20px;
+color:#c0c0c0;
 }
 
 .modal-body {
-	padding:0px;
+padding:0px;
 }
 
 .modal-body textarea.form-control
 {
-   resize: none;
-   border:0;
-   box-shadow:0 0 0;
+resize: none;
+border:0;
+box-shadow:0 0 0;
 }
 
 small.text-muted {
-  font-family:courier,courier-new,monospace;
+font-family:courier,courier-new,monospace;
 }
 
 /* adjust the contents on smaller devices */
@@ -248,7 +249,7 @@ small.text-muted {
   }
 
   .navbar-blue {
-	background-color:#4E8975;
+	background-color:#B22222;
     top:0;
     width:100%;
     position:relative;

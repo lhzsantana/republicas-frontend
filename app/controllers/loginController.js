@@ -4,7 +4,8 @@ angular.module("myApp").controller("LoginController", [
     function($scope, $location){
 
         $scope.login = function(){
-            $location.path("main");
+            //$location.path("main");
+            $location.path("priview");
         }
     }
 ]);
